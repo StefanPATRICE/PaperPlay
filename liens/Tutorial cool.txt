@@ -1,0 +1,7 @@
+Les bases d'Unity http://www.djor-gri.com/blog/?page_id=595
+
+Metaio + Unity http://dev.metaio.com/sdk/getting-started/unity3d/creating-new-ar-application/
+
+Vuforia + Unity http://www.dannygoodayle.com/2013/03/01/making-your-first-project-with-unity-and-augmented-reality/
+
+Google Cloud Print http://systemic-solutions.net/google-cloud-print-plugin-for-unity/
