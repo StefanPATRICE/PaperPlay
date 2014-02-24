@@ -17,7 +17,6 @@ public class PhotographiePatron : MonoBehaviour {
 
     void Update()
     {
-    	//Debug.Log(2);
-        renderer.material.mainTexture = traitementImageScript.process(webCamScript.snap);
+        renderer.material.mainTexture = TraitementImage.process(webCamScript.snap);
     }
 }

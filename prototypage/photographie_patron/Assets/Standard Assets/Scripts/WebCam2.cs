@@ -4,12 +4,11 @@ using System.Collections;
 
 public class WebCam2 : MonoBehaviour
 {
-	private GameObject objetTampon;
-	private Texture texture;
 	private WebCamTexture CameraTexture;
-	private Quaternion baseRotation;
 	public Texture2D snap;
 	public int angle;
+	public float ratio;
+	private bool _pause = false;
 
 	private Texture2D texture2d;
 	
@@ -32,15 +31,33 @@ public class WebCam2 : MonoBehaviour
 		CameraTexture.Play();
 
 		snap = new Texture2D(CameraTexture.width, CameraTexture.height);
+		ratio = (float) CameraTexture.width / (float) CameraTexture.height;
 	}
+
+	public void pause()
+	{
+	    //CameraTexture.Pause();
+	    _pause = true;
+	}
+
 	
 	void Update ()
 	{
+
+        if (Input.GetKey("up"))
+            CameraTexture.Play();
+
+        if (Input.GetKey("down"))
+            CameraTexture.Pause();
+
+        if(!_pause)
+        {
 		//Correction de l'angle de la camera en fonction du device
 		//thirdCube.transform.rotation = baseRotation * Quaternion.AngleAxis(-CameraTexture.videoRotationAngle, Vector3.back);
         angle = CameraTexture.videoRotationAngle;
 
 		snap.SetPixels(CameraTexture.GetPixels());
 		snap.Apply();
+		}
 	}
 }

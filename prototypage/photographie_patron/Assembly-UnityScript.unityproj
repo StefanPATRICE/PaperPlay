@@ -46,12 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PlayAnimation.js" />
      <Compile Include="Assets\Scripts\ChangeScene.js" />
      <Compile Include="Assets\Scripts\DetectionFeuille.js" />
      <Compile Include="Assets\Scripts\Rotation.js" />
-     <None Include="Assets\CustomShader.shader" />
+     <None Include="Assets\Shaders\CustomShader.shader" />
      <None Include="Assets\Audio\Placeholder.txt" />
-     <None Include="Assets\RotateTexture.shader" />
+     <None Include="Assets\Shaders\RotateTexture.shader" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
