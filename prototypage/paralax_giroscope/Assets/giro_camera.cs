@@ -4,23 +4,24 @@ using System.Collections;
 public class giro_camera : MonoBehaviour {
 
     int i = 0;
+    float accelerationY;
 
 	// Use this for initialization
 	void Start () {
-
+		accelerationY = Input.acceleration.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(i > 1000)
-			i = 0;
-		else
-			i++;
+		i++;
+
+		accelerationY = Mathf.Abs(Input.acceleration.y) * 0.3f + accelerationY * 0.7f;
+
 
         transform.position = new Vector3(
-            (float) i / 150f,
-            Mathf.Cos(Input.acceleration.y) * 2f,
+            (float) Mathf.Sin(i / 200f) * 6,
+            Mathf.Cos(accelerationY) * 1f + 1,
             0f
         );
 	}
