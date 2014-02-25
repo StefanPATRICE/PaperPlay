@@ -16,19 +16,21 @@ public class CopyCam : MonoBehaviour {
 		{
 		    float _proportionTextureCible = (float) formatCible.width / (float) formatCible.height;
 		    Debug.Log(webCamScript.ratio);
-		    Debug.Log(_proportionTextureCible);
-		    Debug.Log(webCamScript.ratio - _proportionTextureCible);
+		    //Debug.Log(_proportionTextureCible);
+		    //Debug.Log(webCamScript.ratio - _proportionTextureCible);
 
-            float dif = (webCamScript.ratio - _proportionTextureCible) / 2;
+            float dif = (webCamScript.ratio - 1) * 2 / 3;
+            dif = dif + 0.02777777777f;
             Debug.Log(dif);
+            Debug.Log(dif / 2f);
+            Debug.Log(0.25f / 2f);
 
-            renderer.material.mainTextureScale = new Vector2(1 - dif, 1);
-            renderer.material.mainTextureOffset = new Vector2(dif / 2, 0);
-                                                          /*
+            renderer.material.mainTextureScale = new Vector2(1f - dif, 1f);
+            renderer.material.mainTextureOffset = new Vector2(dif / 2f, 0f);
 
-            renderer.material.mainTextureScale = new Vector2(0.8f, 1);
-            renderer.material.mainTextureOffset = new Vector2(0.1f, 0);
-            */
+
+            renderer.material.mainTextureScale = new Vector2(1f - 0.25f, 1f);
+            renderer.material.mainTextureOffset = new Vector2(0.25f / 2f, 0f);
 		}
 	}
 	
@@ -47,8 +49,6 @@ public class CopyCam : MonoBehaviour {
 		//float dif = (float) (i / 10000f);
 		float dif = 0.25f;
 
-        renderer.material.mainTextureScale = new Vector2(1 - dif, 1);
-        renderer.material.mainTextureOffset = new Vector2(dif / 2, 0);
         //Debug.Log(dif);
 	}
 
